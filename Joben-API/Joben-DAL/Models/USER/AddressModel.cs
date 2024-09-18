@@ -1,12 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Joben_DAL.Models.USER
+﻿namespace Joben_DAL.Models.USER
 {
-    internal class AddressModel
+    public class AddressModel : BaseModel
     {
+        public required string Street { get; set; }
+
+        public required string Barangay { get; set; }
+
+        public required string City { get; set; }
+
+        public required string Region { get; set; }
+
+        public string? PostalCode { get; set; }
+
+        public required string Country { get; set; }
+
+        public int UserID { get; set; }
+
+        public virtual required UserModel User { get; set; }
     }
 }
