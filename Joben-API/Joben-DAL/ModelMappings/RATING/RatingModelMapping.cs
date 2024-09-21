@@ -1,8 +1,8 @@
-﻿using Joben_DAL.Models.USER;
+﻿using Joben_DAL.Models.RATING;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Joben_DAL.ModelMappings.USER
+namespace Joben_DAL.ModelMappings.RATING
 {
     public class RatingModelMapping : IEntityTypeConfiguration<RatingModel>
     {

@@ -1,4 +1,5 @@
-﻿using Joben_DAL.Models.USER.MISC;
+﻿using Joben_DAL.Models.RATING;
+using Joben_DAL.Models.USER.MISC;
 
 namespace Joben_DAL.Models.USER
 {

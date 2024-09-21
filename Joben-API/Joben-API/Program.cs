@@ -1,3 +1,7 @@
+using Joben_BLL.IServices.RATING;
+using Joben_BLL.IServices.USER;
+using Joben_BLL.Services.RATING;
+using Joben_BLL.Services.USER;
 using Joben_DAL;
 using Joben_DAL.Repositories.GenericRepository;
 using Joben_DAL.UnitOfWorks;
@@ -14,6 +18,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IRatingService, RatingService>();
 
 // Add Repositories
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));

@@ -1,4 +1,5 @@
-﻿using Joben_DAL.ModelMappings.USER;
+﻿using Joben_DAL.ModelMappings.RATING;
+using Joben_DAL.ModelMappings.USER;
 using Joben_DAL.ModelMappings.USER.MISC;
 using Joben_DAL.Seeds;
 using Microsoft.EntityFrameworkCore;

@@ -1,4 +1,6 @@
-﻿namespace Joben_DAL.Models.USER
+﻿using Joben_DAL.Models.USER;
+
+namespace Joben_DAL.Models.RATING
 {
     public class RatingModel : BaseModel
     {
