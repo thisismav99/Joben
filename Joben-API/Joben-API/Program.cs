@@ -1,5 +1,6 @@
 using Joben_DAL;
 using Joben_DAL.Repositories.GenericRepository;
+using Joben_DAL.UnitOfWorks;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,13 +8,18 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddDbContext<JobenDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("JobenDB"))
+           .UseLazyLoadingProxies()
 );
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Add Repositories
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+
+// Add Unit of Works
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var app = builder.Build();
 
