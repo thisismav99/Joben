@@ -10,6 +10,6 @@ namespace Joben_DAL.Models.RATING
 
         public int UserID { get; set; }
 
-        public virtual required UserModel User { get; set; }
+        public virtual UserModel? User { get; set; }
     }
 }

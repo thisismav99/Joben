@@ -1,4 +1,6 @@
-﻿using Joben_API.Models.ViewModels;
+﻿using Joben_API.Models.Custom;
+using Joben_API.Models.ViewModels;
+using Joben_API.Utilities;
 using Joben_BLL.IServices.USER;
 using Microsoft.AspNetCore.Mvc;
 
@@ -62,12 +64,12 @@ namespace Joben_API.Controllers.USER
         {
             try
             {
-                var addUser = await _userService.AddUser(userViewModel.User, userViewModel.Address);
+                var convertedUser = APIParameterConverter.ConvertUserModel(userViewModel.User);
+                var convertedAddress = APIParameterConverter.ConvertAddressModel(userViewModel.Address);
 
-                if(addUser)
-                    return Ok(addUser);
-                else
-                    return BadRequest();
+                var addUser = await _userService.AddUser(convertedUser, convertedAddress);
+
+                return Ok(addUser);
             }
             catch(Exception ex)
             {
@@ -78,16 +80,15 @@ namespace Joben_API.Controllers.USER
         }
 
         [HttpPut("user")]
-        public async Task<IActionResult> UpdateUser([FromBody] UserViewModel userViewModel)
+        public async Task<IActionResult> UpdateUser([FromBody] CustomUserModel customUserModel)
         {
             try
             {
-                var updateUser = await _userService.UpdateUser(userViewModel.User, userViewModel.Address);
+                var convertedUser = APIParameterConverter.ConvertUserModel(customUserModel);
 
-                if(updateUser)
-                    return Ok(updateUser);
-                else
-                    return BadRequest();
+                var updateUser = await _userService.UpdateUser(convertedUser);
+
+                return Ok(updateUser);
             }
             catch(Exception ex)
             {
@@ -104,10 +105,7 @@ namespace Joben_API.Controllers.USER
             {
                 var deleteUser = await _userService.DeleteUser(id);
 
-                if(deleteUser)
-                    return Ok();
-                else
-                    return BadRequest();
+                return Ok(deleteUser);
             }
             catch(Exception ex)
             {

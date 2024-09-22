@@ -16,9 +16,11 @@ namespace Joben_DAL.Repositories.GenericRepository
         #endregion
 
         #region Methods
-        public async Task Add(T entity)
+        public async Task<T> Add(T entity)
         {
             await _dbContext.Set<T>().AddAsync(entity);
+
+            return entity;
         }
 
         public async Task Delete(int id)
@@ -39,9 +41,11 @@ namespace Joben_DAL.Repositories.GenericRepository
             return await _dbContext.Set<T>().ToListAsync();
         }
 
-        public void Update(T entity)
+        public async Task<T> Update(T entity)
         {
-            _dbContext.Update(entity);
+            _dbContext.Set<T>().Entry(entity).State = EntityState.Modified;
+
+            return await Task.FromResult(entity);
         }
         #endregion
     }

@@ -6,7 +6,7 @@ namespace Joben_BLL.IServices.USER
     {
         Task<bool> AddUser(UserModel userModel, AddressModel addressModel);
         Task<bool> DeleteUser(int id);
-        Task<bool> UpdateUser(UserModel userModel, AddressModel addressModel);
+        Task<bool> UpdateUser(UserModel userModel);
         Task<UserModel?> GetUser(int id);
         Task<List<UserModel>?> GetAllUsers();
     }

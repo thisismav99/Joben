@@ -24,9 +24,9 @@ namespace Joben_DAL.ModelMappings.USER
             builder.Property(x => x.CreatedBy).IsRequired();
             builder.Property(x => x.CreatedOn).IsRequired();
 
-            builder.HasOne(x => x.Gender).WithMany(u => u.Users).HasForeignKey(f => f.GenderID);
-            builder.HasOne(x => x.CivilStatus).WithMany(u => u.Users).HasForeignKey(f => f.CivilStatusID);
-            builder.HasOne(x => x.Position).WithMany(u => u.Users).HasForeignKey(f => f.PositionID);
+            builder.HasOne(x => x.Gender).WithMany().HasForeignKey(f => f.GenderID);
+            builder.HasOne(x => x.CivilStatus).WithMany().HasForeignKey(f => f.CivilStatusID);
+            builder.HasOne(x => x.Position).WithMany().HasForeignKey(f => f.PositionID);
 
             builder.ToTable("Users");
         }

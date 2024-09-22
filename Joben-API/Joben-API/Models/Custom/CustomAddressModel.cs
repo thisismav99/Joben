@@ -1,6 +1,6 @@
-﻿namespace Joben_DAL.Models.USER
+﻿namespace Joben_API.Models.Custom
 {
-    public class AddressModel : BaseModel
+    public class CustomAddressModel : BaseCustomModel
     {
         public required string Street { get; set; }
 
@@ -13,9 +13,5 @@
         public string? PostalCode { get; set; }
 
         public required string Country { get; set; }
-
-        public int UserID { get; set; }
-
-        public virtual UserModel? User { get; set; }
     }
 }

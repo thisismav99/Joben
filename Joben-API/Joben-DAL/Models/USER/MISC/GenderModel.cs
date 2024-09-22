@@ -3,7 +3,5 @@
     public class GenderModel : BaseModel
     {
         public required string Gender { get; set; }
-
-        public virtual ICollection<UserModel> Users { get; set; } = new List<UserModel>();
     }
 }

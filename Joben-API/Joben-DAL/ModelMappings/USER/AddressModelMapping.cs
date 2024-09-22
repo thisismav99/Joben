@@ -23,7 +23,7 @@ namespace Joben_DAL.ModelMappings.USER
             builder.Property(x => x.CreatedBy).IsRequired();
             builder.Property(x => x.CreatedOn).IsRequired();
 
-            builder.HasOne(x => x.User).WithMany(u => u.Address).HasForeignKey(f => f.UserID);
+            builder.HasOne(x => x.User).WithMany().HasForeignKey(f => f.UserID).OnDelete(DeleteBehavior.Cascade);
 
             builder.ToTable("Address");
         }

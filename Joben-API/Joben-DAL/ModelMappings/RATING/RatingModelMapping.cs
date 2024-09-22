@@ -19,7 +19,7 @@ namespace Joben_DAL.ModelMappings.RATING
             builder.Property(x => x.CreatedBy).IsRequired();
             builder.Property(x => x.CreatedOn).IsRequired();
 
-            builder.HasOne(x => x.User).WithMany(u => u.Ratings).HasForeignKey(f => f.UserID);
+            builder.HasOne(x => x.User).WithMany().HasForeignKey(f => f.UserID).OnDelete(DeleteBehavior.Cascade);
 
             builder.ToTable("Ratings");
         }

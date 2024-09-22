@@ -1,5 +1,6 @@
-﻿using Joben_BLL.IServices.RATING;
-using Joben_DAL.Models.RATING;
+﻿using Joben_API.Models.Custom;
+using Joben_API.Utilities;
+using Joben_BLL.IServices.RATING;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Joben_API.Controllers.RATING
@@ -24,16 +25,15 @@ namespace Joben_API.Controllers.RATING
 
         #region Methods
         [HttpPost("rating")]
-        public async Task<IActionResult> AddRating([FromBody]RatingModel ratingModel)
+        public async Task<IActionResult> AddRating([FromBody]CustomRatingModel customRatingModel)
         {
             try
             {
-                var addRating = await _ratingService.AddRating(ratingModel);
+                var convertedRating = APIParameterConverter.ConvertRatingModel(customRatingModel);
 
-                if (addRating)
-                    return Ok(addRating);
-                else 
-                    return BadRequest();
+                var addRating = await _ratingService.AddRating(convertedRating);
+
+                return Ok(addRating);
             }
             catch(Exception ex)
             {

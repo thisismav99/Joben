@@ -1,9 +1,6 @@
-﻿using Joben_DAL.Models.RATING;
-using Joben_DAL.Models.USER.MISC;
-
-namespace Joben_DAL.Models.USER
+﻿namespace Joben_API.Models.Custom
 {
-    public class UserModel : BaseModel
+    public class CustomUserModel : BaseCustomModel
     {
         public required string FirstName { get; set; }
 
@@ -20,11 +17,5 @@ namespace Joben_DAL.Models.USER
         public int CivilStatusID { get; set; }
 
         public int PositionID { get; set; }
-
-        public virtual GenderModel? Gender { get; set; }
-
-        public virtual CivilStatusModel? CivilStatus { get; set; }
-
-        public virtual PositionModel? Position { get; set; }
     }
 }

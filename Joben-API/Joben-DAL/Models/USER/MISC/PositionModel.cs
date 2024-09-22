@@ -3,7 +3,5 @@
     public class PositionModel : BaseModel
     {
         public required string Position { get; set; }
-
-        public virtual ICollection<UserModel> Users { get; set; } = new List<UserModel>();
     }
 }

@@ -4,6 +4,7 @@ using Joben_DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Joben_DAL.Migrations
 {
     [DbContext(typeof(JobenDbContext))]
-    partial class JobenDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240922084955_Migration3")]
+    partial class Migration3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -168,7 +171,7 @@ namespace Joben_DAL.Migrations
                             ID = 1,
                             CivilStatus = "SINGLE",
                             CreatedBy = "SEEDER",
-                            CreatedOn = new DateTime(2024, 9, 22, 8, 59, 0, 906, DateTimeKind.Utc).AddTicks(5863),
+                            CreatedOn = new DateTime(2024, 9, 22, 8, 49, 54, 750, DateTimeKind.Utc).AddTicks(2692),
                             IsActive = true
                         },
                         new
@@ -176,7 +179,7 @@ namespace Joben_DAL.Migrations
                             ID = 2,
                             CivilStatus = "MARRIED",
                             CreatedBy = "SEEDER",
-                            CreatedOn = new DateTime(2024, 9, 22, 8, 59, 0, 906, DateTimeKind.Utc).AddTicks(5865),
+                            CreatedOn = new DateTime(2024, 9, 22, 8, 49, 54, 750, DateTimeKind.Utc).AddTicks(2695),
                             IsActive = true
                         },
                         new
@@ -184,7 +187,7 @@ namespace Joben_DAL.Migrations
                             ID = 3,
                             CivilStatus = "ANNULLED",
                             CreatedBy = "SEEDER",
-                            CreatedOn = new DateTime(2024, 9, 22, 8, 59, 0, 906, DateTimeKind.Utc).AddTicks(5866),
+                            CreatedOn = new DateTime(2024, 9, 22, 8, 49, 54, 750, DateTimeKind.Utc).AddTicks(2696),
                             IsActive = true
                         },
                         new
@@ -192,7 +195,7 @@ namespace Joben_DAL.Migrations
                             ID = 4,
                             CivilStatus = "DIVORCED",
                             CreatedBy = "SEEDER",
-                            CreatedOn = new DateTime(2024, 9, 22, 8, 59, 0, 906, DateTimeKind.Utc).AddTicks(5867),
+                            CreatedOn = new DateTime(2024, 9, 22, 8, 49, 54, 750, DateTimeKind.Utc).AddTicks(2698),
                             IsActive = true
                         });
                 });
@@ -235,7 +238,7 @@ namespace Joben_DAL.Migrations
                         {
                             ID = 1,
                             CreatedBy = "SEEDER",
-                            CreatedOn = new DateTime(2024, 9, 22, 8, 59, 0, 906, DateTimeKind.Utc).AddTicks(6018),
+                            CreatedOn = new DateTime(2024, 9, 22, 8, 49, 54, 750, DateTimeKind.Utc).AddTicks(2847),
                             Gender = "MALE",
                             IsActive = true
                         },
@@ -243,7 +246,7 @@ namespace Joben_DAL.Migrations
                         {
                             ID = 2,
                             CreatedBy = "SEEDER",
-                            CreatedOn = new DateTime(2024, 9, 22, 8, 59, 0, 906, DateTimeKind.Utc).AddTicks(6020),
+                            CreatedOn = new DateTime(2024, 9, 22, 8, 49, 54, 750, DateTimeKind.Utc).AddTicks(2849),
                             Gender = "FEMALE",
                             IsActive = true
                         },
@@ -251,7 +254,7 @@ namespace Joben_DAL.Migrations
                         {
                             ID = 3,
                             CreatedBy = "SEEDER",
-                            CreatedOn = new DateTime(2024, 9, 22, 8, 59, 0, 906, DateTimeKind.Utc).AddTicks(6021),
+                            CreatedOn = new DateTime(2024, 9, 22, 8, 49, 54, 750, DateTimeKind.Utc).AddTicks(2850),
                             Gender = "GAY",
                             IsActive = true
                         },
@@ -259,7 +262,7 @@ namespace Joben_DAL.Migrations
                         {
                             ID = 4,
                             CreatedBy = "SEEDER",
-                            CreatedOn = new DateTime(2024, 9, 22, 8, 59, 0, 906, DateTimeKind.Utc).AddTicks(6022),
+                            CreatedOn = new DateTime(2024, 9, 22, 8, 49, 54, 750, DateTimeKind.Utc).AddTicks(2851),
                             Gender = "LESBIAN",
                             IsActive = true
                         });
@@ -303,7 +306,7 @@ namespace Joben_DAL.Migrations
                         {
                             ID = 1,
                             CreatedBy = "SEEDER",
-                            CreatedOn = new DateTime(2024, 9, 22, 8, 59, 0, 906, DateTimeKind.Utc).AddTicks(6048),
+                            CreatedOn = new DateTime(2024, 9, 22, 8, 49, 54, 750, DateTimeKind.Utc).AddTicks(2873),
                             IsActive = true,
                             Position = "RIDER"
                         },
@@ -311,7 +314,7 @@ namespace Joben_DAL.Migrations
                         {
                             ID = 2,
                             CreatedBy = "SEEDER",
-                            CreatedOn = new DateTime(2024, 9, 22, 8, 59, 0, 906, DateTimeKind.Utc).AddTicks(6049),
+                            CreatedOn = new DateTime(2024, 9, 22, 8, 49, 54, 750, DateTimeKind.Utc).AddTicks(2875),
                             IsActive = true,
                             Position = "DRIVER"
                         },
@@ -319,7 +322,7 @@ namespace Joben_DAL.Migrations
                         {
                             ID = 3,
                             CreatedBy = "SEEDER",
-                            CreatedOn = new DateTime(2024, 9, 22, 8, 59, 0, 906, DateTimeKind.Utc).AddTicks(6050),
+                            CreatedOn = new DateTime(2024, 9, 22, 8, 49, 54, 750, DateTimeKind.Utc).AddTicks(2876),
                             IsActive = true,
                             Position = "HOUSEKEEPER"
                         },
@@ -327,7 +330,7 @@ namespace Joben_DAL.Migrations
                         {
                             ID = 4,
                             CreatedBy = "SEEDER",
-                            CreatedOn = new DateTime(2024, 9, 22, 8, 59, 0, 906, DateTimeKind.Utc).AddTicks(6051),
+                            CreatedOn = new DateTime(2024, 9, 22, 8, 49, 54, 750, DateTimeKind.Utc).AddTicks(2877),
                             IsActive = true,
                             Position = "COOK"
                         },
@@ -335,7 +338,7 @@ namespace Joben_DAL.Migrations
                         {
                             ID = 5,
                             CreatedBy = "SEEDER",
-                            CreatedOn = new DateTime(2024, 9, 22, 8, 59, 0, 906, DateTimeKind.Utc).AddTicks(6052),
+                            CreatedOn = new DateTime(2024, 9, 22, 8, 49, 54, 750, DateTimeKind.Utc).AddTicks(2878),
                             IsActive = true,
                             Position = "GARDENER"
                         },
@@ -343,7 +346,7 @@ namespace Joben_DAL.Migrations
                         {
                             ID = 6,
                             CreatedBy = "SEEDER",
-                            CreatedOn = new DateTime(2024, 9, 22, 8, 59, 0, 906, DateTimeKind.Utc).AddTicks(6054),
+                            CreatedOn = new DateTime(2024, 9, 22, 8, 49, 54, 750, DateTimeKind.Utc).AddTicks(2880),
                             IsActive = true,
                             Position = "BABY SITTER"
                         },
@@ -351,7 +354,7 @@ namespace Joben_DAL.Migrations
                         {
                             ID = 7,
                             CreatedBy = "SEEDER",
-                            CreatedOn = new DateTime(2024, 9, 22, 8, 59, 0, 906, DateTimeKind.Utc).AddTicks(6055),
+                            CreatedOn = new DateTime(2024, 9, 22, 8, 49, 54, 750, DateTimeKind.Utc).AddTicks(2881),
                             IsActive = true,
                             Position = "DELIVERY MAN"
                         },
@@ -359,7 +362,7 @@ namespace Joben_DAL.Migrations
                         {
                             ID = 8,
                             CreatedBy = "SEEDER",
-                            CreatedOn = new DateTime(2024, 9, 22, 8, 59, 0, 906, DateTimeKind.Utc).AddTicks(6056),
+                            CreatedOn = new DateTime(2024, 9, 22, 8, 49, 54, 750, DateTimeKind.Utc).AddTicks(2882),
                             IsActive = true,
                             Position = "LAUNDRY"
                         });
@@ -436,7 +439,7 @@ namespace Joben_DAL.Migrations
             modelBuilder.Entity("Joben_DAL.Models.RATING.RatingModel", b =>
                 {
                     b.HasOne("Joben_DAL.Models.USER.UserModel", "User")
-                        .WithMany()
+                        .WithMany("Ratings")
                         .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -447,7 +450,7 @@ namespace Joben_DAL.Migrations
             modelBuilder.Entity("Joben_DAL.Models.USER.AddressModel", b =>
                 {
                     b.HasOne("Joben_DAL.Models.USER.UserModel", "User")
-                        .WithMany()
+                        .WithMany("Address")
                         .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -480,6 +483,13 @@ namespace Joben_DAL.Migrations
                     b.Navigation("Gender");
 
                     b.Navigation("Position");
+                });
+
+            modelBuilder.Entity("Joben_DAL.Models.USER.UserModel", b =>
+                {
+                    b.Navigation("Address");
+
+                    b.Navigation("Ratings");
                 });
 #pragma warning restore 612, 618
         }
